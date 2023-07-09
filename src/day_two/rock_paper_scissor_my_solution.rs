@@ -104,19 +104,16 @@ impl Outcome {
 
 #[allow(dead_code)]
 fn rock_paper_scissor() -> usize {
-    let input = read_file("src/day_two/input.txt");
-    // transform each row in rounds
-    let my_score = input
+    read_file("src/day_two/input.txt")
         .lines()
+        // transform each row in rounds
         .map(Round::from_str)
         .map(|x| match x {
             Ok(x) => x,
             Err(err) => panic!("Invalid game, got {:?}", err),
         })
         .map(|x| x.score())
-        .sum::<usize>();
-
-    return my_score;
+        .sum::<usize>()
 }
 
 #[cfg(test)]
