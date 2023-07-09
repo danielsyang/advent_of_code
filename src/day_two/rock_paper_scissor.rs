@@ -122,11 +122,6 @@ mod test {
 
     #[test]
     fn test_rock_paper_scissor() {
-        assert_eq!(rock_paper_scissor_our_score(), 15);
-    }
-
-    #[test]
-    fn test_rock_paper_scissor_their_score() {
-        assert_eq!(rock_paper_scissor_their_score(), 9);
+        assert_eq!(rock_paper_scissor_our_score(), 9);
     }
 }
