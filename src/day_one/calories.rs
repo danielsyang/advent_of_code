@@ -1,16 +1,9 @@
-use std::fs;
-
-fn read_file() -> String {
-    return match fs::read_to_string("src/day_one/input.txt") {
-        Ok(s) => s,
-        Err(_err) => panic!("Error reading file "),
-    };
-}
+use crate::utils::read_file;
 
 // My solution
 #[allow(dead_code)]
 fn calories() -> u64 {
-    let input = read_file();
+    let input = read_file("src/day_one/input.txt");
     let mut accumulator = 0;
     let mut result = 0;
 
@@ -37,7 +30,7 @@ fn calories() -> u64 {
 
 #[allow(dead_code)]
 fn calories_second_try() -> u64 {
-    let input = read_file();
+    let input = read_file("src/day_one/input.txt");
     let lines = input.lines().collect::<Vec<_>>();
     let result = lines
         .split(|x| x.is_empty())
